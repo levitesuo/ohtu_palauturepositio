@@ -2,6 +2,14 @@ import unittest
 from statistics_service import StatisticsService
 from player import Player
 
+from enum import Enum
+
+
+class SortBy(Enum):
+    POINTS = 1
+    GOALS = 2
+    ASSISTS = 3
+
 
 class PlayerReaderStub:
     def get_players(self):
@@ -40,7 +48,17 @@ class TestStatisticsService(unittest.TestCase):
         self.assertAlmostEqual([str(p) for p in edm], [str(p)
                                for p in edm_players])
 
-    def test_top(self):
+    def test_top_points(self):
         top_player = self.stats.top(1)
+
+        self.assertAlmostEqual(str(top_player[0]), str(self.players[4]))
+
+    def test_top_goals(self):
+        top_player = self.stats.top(1, SortBy.GOALS)
+
+        self.assertAlmostEqual(str(top_player[0]), str(self.players[1]))
+
+    def test_top_assists(self):
+        top_player = self.stats.top(1, SortBy.ASSISTS)
 
         self.assertAlmostEqual(str(top_player[0]), str(self.players[4]))
