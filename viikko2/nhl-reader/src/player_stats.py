@@ -10,3 +10,7 @@ class PlayerStats:
             key=lambda p: p.goals + p.assists, reverse=True)
 
         return national_players
+
+    def get_nationalities(self):
+        nationalities = list(set([p.nationality for p in self.players]))
+        return nationalities
