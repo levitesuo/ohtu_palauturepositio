@@ -50,6 +50,4 @@ class UserService:
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
 
 
-any(char.isdigit() for char in inputString)
-
 user_service = UserService()
