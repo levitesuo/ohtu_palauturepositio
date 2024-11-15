@@ -49,6 +49,32 @@ Register With Username That Is Already In Use
     Registeration Should Fail
 #
 
+Login After Successful Registration
+    Set Username  pasi
+    Set Matching Passwords  123456789
+    Submit Credentials
+    Registeration Should Succeed
+    Click Link  Continue to main page
+    Click Button  Logout
+    Go To Login Page
+    Set Username  pasi
+    Set Password  123456789
+    Click Button  Login
+    Login Should Succeed
+# ...
+
+Login After Failed Registration
+    Set Username  pa
+    Set Matching Passwords  123456789
+    Submit Credentials
+    Registeration Should Fail
+    Go To Login Page
+    Set Username  pa
+    Set Password  123456789
+    Click Button  Login
+    Page Should Contain  Invalid username or password
+# ...
+
 *** Keywords ***
 
 Set Username
@@ -81,4 +107,7 @@ Registeration Should Succeed
 
 Registeration Should Fail
     Title Should Be  Register
+
+Login Should Succeed
+    Main Page Should Be Open
 #...
