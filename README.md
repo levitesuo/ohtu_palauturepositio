@@ -10,3 +10,9 @@
     - [poetry-web](/viikko2/poetry-web/)
     - [project-reader](/viikko2/project-reader/)
     - [NHL-tilastot](/viikko2/nhl-reader/)
+
+
+- #### [Viikko 3](/viikko3/)
+    - [hello-robot](/viikko3/hello-robot/)
+    - [web-login](/viikko3/web-login/)
+    - [webcounter](https://github.com/levitesuo/ohtu_webcounter)
